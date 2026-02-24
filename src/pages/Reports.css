@@ -1,0 +1,145 @@
+/* ===== Reports Page Styles ===== */
+
+.report-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--sp-md);
+    margin-bottom: var(--sp-lg);
+}
+
+.report-type-card {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-lg);
+    border-left: 4px solid var(--card-color);
+    transition: var(--transition-base);
+}
+
+.report-type-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.report-card-icon {
+    font-size: 2rem;
+    min-width: 40px;
+    text-align: center;
+}
+
+.report-card-info {
+    flex: 1;
+}
+
+.report-card-info h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.report-card-info p {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.report-card-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--admin-accent);
+    margin-top: 4px;
+    display: inline-block;
+}
+
+/* Performance Bars */
+.performance-bar-wrap {
+    width: 100%;
+}
+
+.performance-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.performance-fill {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: var(--transition-slow);
+}
+
+/* Attendance Chart */
+.attendance-chart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: var(--sp-md);
+    padding: var(--sp-xl) var(--sp-md);
+    min-height: 300px;
+}
+
+.chart-bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-sm);
+    flex: 1;
+}
+
+.chart-bar-container {
+    width: 100%;
+    max-width: 60px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    transition: height 0.8s ease-out;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    min-height: 30px;
+}
+
+.chart-bar-value {
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.chart-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.chart-sub {
+    font-size: 0.65rem;
+    color: var(--text-light);
+}
+
+@media (max-width: 600px) {
+    .report-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-type-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .attendance-chart {
+        overflow-x: auto;
+    }
+}

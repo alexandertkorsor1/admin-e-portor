@@ -1,0 +1,343 @@
+/* ===== Manage Faculty Styles ===== */
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--sp-lg);
+}
+
+.faculty-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: 0;
+    overflow: hidden;
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.clickable-stat {
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.clickable-stat:hover {
+    transform: translateY(-2px);
+    background: var(--bg-card);
+    border-color: var(--admin-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.active-stat {
+    background: var(--bg-card);
+    border-color: var(--admin-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.active-stat::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--admin-accent);
+}
+
+.faculty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(139, 92, 246, 0.3);
+}
+
+.fac-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-md);
+    padding: var(--sp-lg);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.06), rgba(212, 168, 67, 0.04));
+    border-bottom: 1px solid var(--border);
+}
+
+.fac-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--admin-accent), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.fac-header-info {
+    flex: 1;
+}
+
+.fac-header-info h3 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.fac-emp-id {
+    font-size: 0.72rem;
+    color: var(--admin-accent);
+    font-weight: 600;
+    font-family: 'Consolas', monospace;
+}
+
+.fac-card-body {
+    padding: var(--sp-md) var(--sp-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+}
+
+.fac-detail-row {
+    display: flex;
+    gap: var(--sp-sm);
+    align-items: flex-start;
+}
+
+.fac-detail-icon {
+    font-size: 1rem;
+    min-width: 24px;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.fac-detail-label {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.fac-detail-value {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.fac-classes-chips {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+}
+
+.class-chip {
+    padding: 2px 10px;
+    border-radius: var(--radius-full);
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--admin-accent);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.fac-amount-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--text-light);
+    background: var(--bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+.amount-indicator {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--admin-accent);
+    background: rgba(139, 92, 246, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+}
+
+.fac-card-footer {
+    padding: var(--sp-md) var(--sp-lg);
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: var(--sp-sm);
+}
+
+.fac-card-footer .btn {
+    flex: 1;
+    justify-content: center;
+}
+
+/* Class Selection Grid in Modal */
+.class-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+    padding: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.class-checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+
+.class-checkbox-item:hover {
+    border-color: var(--admin-accent);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.class-checkbox-item input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.class-checkbox-item span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+    .faculty-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Stats Detail Panel */
+.stat-detail-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    margin: var(--sp-md) 0 var(--sp-lg);
+    padding: var(--sp-lg);
+    box-shadow: var(--shadow-lg);
+    border-left: 4px solid var(--admin-accent);
+}
+
+.detail-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--sp-lg);
+    padding-bottom: var(--sp-sm);
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-panel-header h3 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.detail-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--sp-md);
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: var(--sp-sm);
+}
+
+.detail-row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--sp-sm) var(--sp-md);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.detail-row-item:hover {
+    border-color: var(--admin-accent);
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.detail-fac-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.detail-fac-info strong {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.detail-fac-subject {
+    font-size: 0.75rem;
+    color: var(--admin-accent);
+    font-weight: 600;
+}
+
+/* Subject Grouping Styles */
+.detail-subject-group {
+    background: var(--bg);
+    padding: var(--sp-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.detail-subject-title {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-light);
+    margin-bottom: var(--sp-sm);
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-faculty-sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.detail-faculty-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.detail-faculty-item .dot {
+    width: 6px;
+    height: 6px;
+    background: var(--admin-accent);
+    border-radius: 50%;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.online {
+    background: #10b981;
+}
+
+.status-dot.away {
+    background: #f59e0b;
+}

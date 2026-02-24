@@ -1,0 +1,95 @@
+/* ===== Activity Log Timeline Styles ===== */
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeline-item {
+    display: flex;
+    gap: var(--sp-md);
+}
+
+.timeline-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 48px;
+}
+
+.timeline-dot {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.timeline-dot.success {
+    background: rgba(46, 204, 113, 0.12);
+}
+
+.timeline-dot.info {
+    background: rgba(52, 152, 219, 0.12);
+}
+
+.timeline-dot.warning {
+    background: rgba(243, 156, 18, 0.12);
+}
+
+.timeline-dot.danger {
+    background: rgba(231, 76, 60, 0.12);
+}
+
+.timeline-dot.purple {
+    background: rgba(139, 92, 246, 0.12);
+}
+
+.timeline-line {
+    width: 2px;
+    flex: 1;
+    background: var(--border);
+    min-height: 20px;
+}
+
+.timeline-content {
+    flex: 1;
+    padding-bottom: var(--sp-lg);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.timeline-header h4 {
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.timeline-time {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.timeline-detail {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.timeline-user {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: var(--admin-accent);
+    font-weight: 600;
+    margin-top: 4px;
+}

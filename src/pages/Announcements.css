@@ -1,0 +1,92 @@
+/* ===== Announcements Styles ===== */
+
+.announcements-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-md);
+}
+
+.announcement-card {
+    background: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: var(--sp-lg);
+    transition: var(--transition-base);
+    box-shadow: var(--shadow-sm);
+    border-left: 4px solid transparent;
+}
+
+.announcement-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.announcement-card.priority-high {
+    border-left-color: var(--danger);
+}
+
+.announcement-card.priority-medium {
+    border-left-color: var(--warning);
+}
+
+.announcement-card.priority-low {
+    border-left-color: var(--info);
+}
+
+.ann-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--sp-sm);
+    flex-wrap: wrap;
+    gap: var(--sp-sm);
+}
+
+.ann-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+}
+
+.ann-audience {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.ann-date {
+    font-size: 0.78rem;
+    color: var(--text-light);
+}
+
+.ann-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: var(--sp-sm);
+}
+
+.ann-content {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--sp-md);
+}
+
+.ann-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--sp-md);
+    border-top: 1px solid var(--border);
+}
+
+.ann-author {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.ann-actions {
+    display: flex;
+    gap: var(--sp-sm);
+}
